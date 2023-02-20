@@ -31,30 +31,36 @@ const nazwa_tabeli = "#example-table";
 // Here is a method to fileter data -- creator Wojciech Chodasiewicz
 function FilterData(nazwa_elemenu, nazwa_tabeli) {
     $(nazwa_elemenu).on("keyup", function() {
-        var idValue = $(id).val().trim();
-        var surnameValue = $(surname).val().trim();
-        var imieValue = $(imie).val().trim();
-        var jobValue = $(job).val().trim();
-        var companyValue = $(company).val().trim();
-        var emailValue = $(email).val().trim();
-        var phoneValue = $(phone).val().trim();
-        var ageValue = $(age).val().trim();
-        var searchValues = [idValue, surnameValue, imieValue, jobValue, companyValue, emailValue, phoneValue, ageValue];
-        $(nazwa_tabeli+">tbody>tr").each(function() {
-            var showRow = true;
-            for (var j=0; j<searchValues.length; j++) {
-                if (searchValues[j] !== "" && $(this).find("td:eq(" + j + ")").text().toLowerCase() !== searchValues[j].toLowerCase()) {
+      var idValue = $(id).val().trim();
+      var surnameValue = $(surname).val().trim();
+      var imieValue = $(imie).val().trim();
+      var jobValue = $(job).val().trim();
+      var companyValue = $(company).val().trim();
+      var emailValue = $(email).val().trim();
+      var phoneValue = $(phone).val().trim();
+      var ageValue = $(age).val().trim();
+      var searchValues = [idValue, surnameValue, imieValue, jobValue, companyValue, emailValue, phoneValue, ageValue];
+      $(nazwa_tabeli+">tbody>tr").each(function() {
+        var showRow = true;
+        for (var j=0; j<searchValues.length; j++) {
+            if(searchValues[j] == idValue){
+                if (searchValues[j] !== "" && !new RegExp("\\b" + searchValues[j] + "\\b", "i").test($(this).find("td:eq(" + j + ")").text())) {
                     showRow = false;
                     break;
                 }
+            }else if (searchValues[j] !== "" && !$(this).find("td:eq(" + j + ")").text().toLowerCase().includes(searchValues[j].toLowerCase())) {
+                showRow = false;
+                break;
             }
-            if (showRow)
-                $(this).show();
-            else
-                $(this).hide();
-        });
+        }
+        if (showRow)
+          $(this).show();
+        else
+          $(this).hide();
+      });
     });
-}
+  }
+  
 
 function isEmpty(str) {
     return !str.length;
