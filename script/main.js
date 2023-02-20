@@ -27,6 +27,7 @@ const email = "#search-email";
 const phone = "#search-phone";
 const age = "#search-age";
 const nazwa_tabeli = "#example-table";
+const suma_wieku = '#sum-age';
 
 // Here is a method to fileter data -- creator Wojciech Chodasiewicz
 function FilterData(nazwa_elemenu, nazwa_tabeli) {
@@ -40,6 +41,7 @@ function FilterData(nazwa_elemenu, nazwa_tabeli) {
       var phoneValue = $(phone).val().trim();
       var ageValue = $(age).val().trim();
       var searchValues = [idValue, surnameValue, imieValue, jobValue, companyValue, emailValue, phoneValue, ageValue];
+      var ageSum = 0;
       $(nazwa_tabeli+">tbody>tr").each(function() {
         var showRow = true;
         for (var j=0; j<searchValues.length; j++) {
@@ -53,14 +55,19 @@ function FilterData(nazwa_elemenu, nazwa_tabeli) {
                 break;
             }
         }
-        if (showRow)
+        if (showRow){
           $(this).show();
-        else
+          ageSum += parseInt($(this).find("td:eq(7)").text());
+        }else
           $(this).hide();
       });
+      displayAgeSum(ageSum);
     });
-  }
+}
   
+function displayAgeSum(ageSum) {
+    $(suma_wieku).text("Suma wieku: " + ageSum);
+}
 
 function isEmpty(str) {
     return !str.length;
