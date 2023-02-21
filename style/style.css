@@ -10,11 +10,11 @@ html, body {
     font-size: 4rem;
     letter-spacing: 0.2rem;
     text-shadow: 1px 1px 1px #ffffff,
-                 2px 2px 1px #000000,
-                 3px 3px 1px #000000,
-                 4px 4px 1px #000000,
-                 5px 5px 1px #000000,
-                 6px 6px 1px #000000;
+                 2px 2px 1px #838383e9,
+                 3px 3px 1px #838383e9,
+                 4px 4px 1px #838383e9,
+                 5px 5px 1px #838383e9,
+                 6px 6px 1px #838383e9;
   }
   
   /* table {
@@ -43,7 +43,7 @@ html, body {
     font-size: 1.7rem;
     padding: 1.2rem;
     text-align: left;
-    background: linear-gradient(to bottom,#000000,#ffffff);
+    background: linear-gradient(to bottom,#31597af3,#ffffff);
     color: white;
     text-shadow: 1px 1px 1px black;
     cursor: pointer;
@@ -55,7 +55,7 @@ html, body {
   }
   
   th:active {
-    color: #bbb;
+    color: #31597af3;
   }
   
   td {
@@ -73,7 +73,7 @@ html, body {
   }
   
   tr:nth-child(even) {
-    background: #00000061;
+    background: #31597ab1;
   }
   
   p {
