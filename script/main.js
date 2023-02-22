@@ -370,7 +370,6 @@ const uwagi = "#search-uwagi";
 
 const nazwa_tabeli = "#example-table";
 const suma_wieku = '#sum-age';
-var totalKwotaSum = 0;
 // Here is a method to fileter data -- creator Wojciech Chodasiewicz
 function FilterData(nazwa_elemenu, nazwa_tabeli) {
     $(nazwa_elemenu).on("keyup", function() {
@@ -387,18 +386,18 @@ function FilterData(nazwa_elemenu, nazwa_tabeli) {
       var nr_rach_spolValue = $(nr_rach_spol).val().trim();
       var nr_rach_inwestValue = $(nr_rach_inwest).val().trim();
       var uwagiValue = $(uwagi).val().trim();
-      
+      var KwotaSum = 0;
+
       var searchValues = [idValue, search_data_zawarcia_umowyValue, 
                         spolkaValue, search_nazwa_inwestroaValue, 
                         adresValue, peselValue, nipValue, regonValue, 
                         przedmiotValue,kwotaValue, nr_rach_spolValue,
                         nr_rach_inwestValue, uwagiValue
                     ];
-      var KwotaSum = 0;
       $(nazwa_tabeli+">tbody>tr").each(function() {
         var showRow = true;
         for (var j=0; j<searchValues.length; j++) {
-            if(searchValues[j] == idValue){
+            if(searchValues[j] == idValue || searchValues[j] == kwotaValue){
                 if (searchValues[j] !== "" && !new RegExp("\\b" + searchValues[j] + "\\b", "i").test($(this).find("td:eq(" + j + ")").text())) {
                     showRow = false;
                     break;
@@ -410,7 +409,7 @@ function FilterData(nazwa_elemenu, nazwa_tabeli) {
         }
         if (showRow){
           $(this).show();
-          KwotaSum += parseInt($(this).find("td:eq(9)").text());
+          KwotaSum += parseFloat($(this).find("td:eq(9)").text());
         }else
           $(this).hide();
       });
@@ -456,6 +455,7 @@ FilterData(nr_rach_inwest, nazwa_tabeli);
 //Filter uwagi
 FilterData(uwagi, nazwa_tabeli);
 
+  
 // This is not my implemetation of the code:
 window.onload = function(){
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -584,20 +584,6 @@ window.onload = function(){
         countRequest.onsuccess = function() {
             console.log(countRequest.result);
         }
-    
-        // if(activeIndex == spolka) {
-        //     var getRequest = myIndex.get('73 1050 1025 1000 0090 3018 1086');
-        //     getRequest.onsuccess = function() {
-        //         console.log(getRequest.result);
-        //     }
-        // }
-
-        // if(activeIndex == data_umowy) {
-        //     var getKeyRequest = myIndex.getKey('Bungle');
-        //     getKeyRequest.onsuccess = function() {
-        //         console.log(getKeyRequest.result);
-        //     }
-        // }
      
         myIndex.openCursor().onsuccess = function(event) {
             var cursor = event.target.result;
