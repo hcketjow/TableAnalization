@@ -1,7 +1,7 @@
 var db;
 var activeIndex;
 
-var contacts = [ //5 - 158 kwoty są błędne
+var contacts = [
     { id: 1, data_umowy: '23/05/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Dariusz Osiński', adres: 'Mińskiej 15B, 05-300 Stojadła', pesel: '78112516531', nip: '', regon: '', przedmiot: 'PitBull. Król ulicy', kwota: 20_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086', nr_rach_inwest: '03 1020 1013 0000 0002 0110 1377', uwagi: 'zawartość dokumentów została powielona(są 2 skany)' },
     { id: 2, data_umowy: '25/05/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Edyta Górska', adres: 'Brodzińskiego 103/11, 71-146 Szczecin', pesel: '77050615229', nip: '', regon: '', przedmiot: 'PitBull. Król ulicy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086', nr_rach_inwest: '84 1030 0019 0109 8513 6313 0013', uwagi: '' },
     { id: 3, data_umowy: '23/05/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Michał Rusłanowicz', adres: 'Wąwozowej 23/15, 02-796 Warszawa', pesel: '49050703617', nip: '', regon: '', przedmiot: 'PitBull. Król ulicy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086', nr_rach_inwest: '84 1030 0019 0109 8513 6313 0013', uwagi: '' },
@@ -414,7 +414,6 @@ function FilterData(nazwa_elemenu, nazwa_tabeli) {
         }else
           $(this).hide();
       });
-      totalKwotaSum = KwotaSum;
       displayKwotaSum(KwotaSum);
     });
 }
@@ -463,7 +462,7 @@ window.onload = function(){
     window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
     window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
 
-    var DBOpenRequest = window.indexedDB.open('contactsList', 1);
+    var DBOpenRequest = window.indexedDB.open('DataList', 1);
 
     DBOpenRequest.onsuccess = function(event) {
         db = DBOpenRequest.result;
@@ -477,24 +476,24 @@ window.onload = function(){
             console.log('Error loading database.');
         };
         
-        var objectStore = db.createObjectStore('contactsList', { keyPath: id }); 
-        objectStore.createIndex(data_umowy, data_umowy, { unique: false }); 
-        objectStore.createIndex(spolka, spolka, { unique: false });
-        objectStore.createIndex(nazwa_inwest, nazwa_inwest, { unique: false });
-        objectStore.createIndex(adres, adres, { unique: false });
-        objectStore.createIndex(pesel, pesel, { unique: true });
-        objectStore.createIndex(nip, nip, { unique: false });
-        objectStore.createIndex(regon, regon, { unique: false });
-        objectStore.createIndex(przedmiot, przedmiot, { unique: false });
-        objectStore.createIndex(kwota, kwota, { unique: false });
-        objectStore.createIndex(nr_rach_spol, nr_rach_spol, { unique: false });
-        objectStore.createIndex(nr_rach_inwest, nr_rach_inwest, { unique: false });
-        objectStore.createIndex(uwagi, uwagi, { unique: false });
+        var objectStore = db.createObjectStore('DataList', { keyPath: 'id' }); 
+        objectStore.createIndex('data_umowy', 'data_umowy'); 
+        objectStore.createIndex('spolka', 'spolka');
+        objectStore.createIndex('nazwa_inwest', 'nazwa_inwest');
+        objectStore.createIndex('adres', 'adres');
+        objectStore.createIndex('pesel', 'pesel');
+        objectStore.createIndex('nip', 'nip');
+        objectStore.createIndex('regon', 'regon');
+        objectStore.createIndex('przedmiot', 'przedmiot');
+        objectStore.createIndex('kwota', 'kwota');
+        objectStore.createIndex('nr_rach_spol', 'nr_rach_spol');
+        objectStore.createIndex('nr_rach_inwest', 'nr_rach_inwest');
+        objectStore.createIndex('uwagi', 'uwagi');
     };
     
     function populateData() {
-        var transaction = db.transaction(['contactsList'], 'readwrite');
-        var objectStore = transaction.objectStore('contactsList');
+        var transaction = db.transaction(['DataList'], 'readwrite');
+        var objectStore = transaction.objectStore('DataList');
         for(i = 0; i < contacts.length; i++) {
             var request = objectStore.put(contacts[i]);
         };
@@ -541,8 +540,8 @@ window.onload = function(){
 
     function displayDataByKey(){
         tableEntry.innerHTML = '';
-        var transaction = db.transaction(['contactsList'], 'readonly');
-        var objectStore = transaction.objectStore('contactsList');
+        var transaction = db.transaction(['DataList'], 'readonly');
+        var objectStore = transaction.objectStore('DataList');
 
         objectStore.openCursor().onsuccess = function(event) {
             var cursor = event.target.result;
@@ -560,7 +559,7 @@ window.onload = function(){
                                     + '<td>' + cursor.value.kwota     + '</td>'
                                     + '<td>' + cursor.value.nr_rach_spol     + '</td>'
                                     + '<td>' + cursor.value.nr_rach_inwest     + '</td>'
-                                    + '<td>' + cursor.value.uwagi     + '</td>'
+                                    + '<td>' + cursor.value.uwagi     + '</td>';
                 tableEntry.appendChild(tableRow);  
                 cursor.continue();
             }else
@@ -570,8 +569,8 @@ window.onload = function(){
 
     function displayDataByIndex(activeIndex) {
         tableEntry.innerHTML = '';
-        var transaction = db.transaction(['contactsList'], 'readonly');
-        var objectStore = transaction.objectStore('contactsList');
+        var transaction = db.transaction(['DataList'], 'readonly');
+        var objectStore = transaction.objectStore('DataList');
 
         var myIndex = objectStore.index(activeIndex);
 
@@ -586,19 +585,19 @@ window.onload = function(){
             console.log(countRequest.result);
         }
     
-        if(activeIndex == spolka) {
-            var getRequest = myIndex.get('Mr');
-            getRequest.onsuccess = function() {
-                console.log(getRequest.result);
-            }
-        }
+        // if(activeIndex == spolka) {
+        //     var getRequest = myIndex.get('73 1050 1025 1000 0090 3018 1086');
+        //     getRequest.onsuccess = function() {
+        //         console.log(getRequest.result);
+        //     }
+        // }
 
-        if(activeIndex == data_umowy) {
-            var getKeyRequest = myIndex.getKey('Bungle');
-            getKeyRequest.onsuccess = function() {
-                console.log(getKeyRequest.result);
-            }
-        }
+        // if(activeIndex == data_umowy) {
+        //     var getKeyRequest = myIndex.getKey('Bungle');
+        //     getKeyRequest.onsuccess = function() {
+        //         console.log(getKeyRequest.result);
+        //     }
+        // }
      
         myIndex.openCursor().onsuccess = function(event) {
             var cursor = event.target.result;
@@ -616,7 +615,7 @@ window.onload = function(){
                                 + '<td>' + cursor.value.kwota + '</td>'
                                 + '<td>' + cursor.value.nr_rach_spol + '</td>'
                                 + '<td>' + cursor.value.nr_rach_inwest + '</td>'
-                                + '<td>' + cursor.value.uwagi + '</td>'
+                                + '<td>' + cursor.value.uwagi + '</td>';
                 tableEntry.appendChild(tableRow);  
 
                 cursor.continue();
