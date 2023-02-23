@@ -492,8 +492,6 @@ function exportToCSV() {
 }
 
 
-
-
 // Export to Excel file:
 function exportToExcel() {
     var table = document.getElementById("example-table");
@@ -533,6 +531,43 @@ function s2ab(s) {
     for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xff;
     return buf;
 }
+  
+
+// Sorting functionality:
+// Add event listener to all filter input fields to enable sorting on click
+$(nazwa_tabeli + ">thead>tr>th:eq(0)").on("click", function () {
+    var tableRows = $(nazwa_tabeli + ">tbody>tr").toArray();
+    var sortOrder = $(this).hasClass("sorting-asc") ? 1 : -1;
+    tableRows.sort(function (a, b) {
+        var aVal = parseInt($(a).find("td:eq(0)").text().trim());
+        var bVal = parseInt($(b).find("td:eq(0)").text().trim());
+        if (isNaN(aVal)) {
+            return 1 * sortOrder;
+        }
+        if (isNaN(bVal)) {
+            return -1 * sortOrder;
+        }
+        return (aVal - bVal) * sortOrder;
+    });
+
+    // Toggle sorting order between ascending and descending
+    $(nazwa_tabeli + ">thead>tr>th:eq(0)").removeClass("sorting-asc sorting-desc");
+    if (sortOrder === 1) {
+        $(this).removeClass("sorting-asc").addClass("sorting-desc");
+    } else {
+        $(this).removeClass("sorting-desc").addClass("sorting-asc");
+    }
+
+    // Reorder table rows based on sorted data
+    $(nazwa_tabeli + ">tbody").empty();
+    $.each(tableRows, function (i, row) {
+        $(nazwa_tabeli + ">tbody").append(row);
+    });
+});
+
+
+
+  
   
   
 
