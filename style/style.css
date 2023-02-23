@@ -10,11 +10,11 @@ html, body {
     font-size: 4rem;
     letter-spacing: 0.2rem;
     text-shadow: 1px 1px 1px #ffffff,
-                 2px 2px 1px #838383e9,
-                 3px 3px 1px #838383e9,
-                 4px 4px 1px #838383e9,
-                 5px 5px 1px #838383e9,
-                 6px 6px 1px #838383e9;
+                 2px 2px 1px #8383835a,
+                 3px 3px 1px #8383835a,
+                 4px 4px 1px #8383835a,
+                 5px 5px 1px #8383835a,
+                 6px 6px 1px #8383835a;
   }
   
   /* table {
@@ -43,7 +43,7 @@ html, body {
     font-size: 1.7rem;
     padding: 1.2rem;
     text-align: left;
-    background: linear-gradient(to bottom,#31597a7f,#ffffff);
+    /* background: linear-gradient(to bottom,#000000dd,#ffffff); */
     color: white;
     text-shadow: 1px 1px 1px black;
     cursor: pointer;
@@ -53,9 +53,14 @@ html, body {
     color: #ddd;
     border: 0;
   }
+
+  .form-control::placeholder {
+    color: white !important;
+    opacity: 1;
+  }
   
   th:active {
-    color: #31597a7f;
+    color: #8383835a;
   }
   
   td {
@@ -73,7 +78,7 @@ html, body {
   }
   
   tr:nth-child(even) {
-    background: #31597a7f;
+    background: #8383835a;
   }
   
   p {
