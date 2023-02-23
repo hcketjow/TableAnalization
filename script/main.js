@@ -99,7 +99,7 @@ var contacts = [
     { id: 95, data_umowy: '30/04/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Paweł Strzaliński', adres: 'Żeromskiego 27, 05-070 Sulejówek', pesel: 78090301376,  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '50 1020 5558 1111 1496 4360 0082', uwagi: 'zawartość dokumentów została powielona(są 2 skany)'},
     { id: 96, data_umowy: '27/04/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Paweł Prokop', adres: 'Kleberga 3, 33-101 Tarnów', pesel: 71110309059,  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '  54 1140 2017 0000 4802 0258 0942', uwagi: 'Brak podpisu; zawartość dokumentów została powielona(są 2 skany)'},
     { id: 97, data_umowy: '30/05/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Paweł Lis', adres: 'Trablice 83, 26-624 Kowala', pesel: '',  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 20_000, nr_rach_spol: '', nr_rach_inwest: '  13 1090 2590 0000 0001 2109 8249', uwagi: 'Wpłata kwoty współfinansowania zostanie dokonana poprzez potrącenie przez SPÓŁKĘ należności w postaci zwrotu wkładu inwestycyjnego. '}, //przysługującej INWESTOROWI z tytułu Umowy inwestycyjnej o finansowanie produkcji filmowych z dnia 23.02.2016 r. w przedmiocie realizacji dzieła filmowego pod tytułem „PITBULL. OSTATNI PIES” (tytuły robocze „Pitbull. Król ulicy”, „Pitbull. Królowie Autostrad” ze zobowiązaniem INWESTORA z tytułu wpłaty kwoty współfinansowania.
-    { id: 98, data_umowy: '11/12/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: '„Instytut Kształcenia Kadr Paweł Krokowski”', adres: 'Michała Kruka 3, 20-706 Lublin ', pesel: '',  nip: 7121732898, regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 100_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '39 1090 2835 0000 0001 3532 8981', uwagi: ''},
+    { id: 98, data_umowy: '11/12/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Instytut Kształcenia Kadr Paweł Krokowski', adres: 'Michała Kruka 3, 20-706 Lublin ', pesel: '',  nip: 7121732898, regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 100_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '39 1090 2835 0000 0001 3532 8981', uwagi: ''},
     { id: 99, data_umowy: '12/03/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Michał Trzeciecki', adres: 'Al. KEN 57/ 136, 02 -797 Warszawa', pesel: 63041002970,  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '67 1240 5989 1111 0010 3195 9954', uwagi: 'dwa scany tej samej umowy'},
     { id: 100, data_umowy: '27/04/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Michał Gołębiewski', adres: 'Lotniczej 3A, 05-806 Komorów', pesel: 70072701190,  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '76 1140 2004 0000 3902 2333 6980', uwagi: 'Brak podpisu spółki'},
     { id: 101, data_umowy: '07/03/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Mateusz Kałasa', adres: 'KEN 90/37, 02-777 Warszawa', pesel: 76072200997,  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '  49 1090 1870 0000 0001 3103 4301', uwagi: 'Brak podpisu'},
@@ -535,42 +535,78 @@ function s2ab(s) {
 
 // Sorting functionality:
 // Add event listener to all filter input fields to enable sorting on click
-$(nazwa_tabeli + ">thead>tr>th:eq(0)").on("click", function () {
-    var tableRows = $(nazwa_tabeli + ">tbody>tr").toArray();
-    var sortOrder = $(this).hasClass("sorting-asc") ? 1 : -1;
-    tableRows.sort(function (a, b) {
-        var aVal = parseInt($(a).find("td:eq(0)").text().trim());
-        var bVal = parseInt($(b).find("td:eq(0)").text().trim());
-        if (isNaN(aVal)) {
-            return 1 * sortOrder;
+function SortByString(iteration){
+    $(nazwa_tabeli + ">thead>tr>th:eq("+ iteration +")").on("click", function () {
+        var tableRows = $(nazwa_tabeli + ">tbody>tr").toArray();
+        var sortOrder = $(this).hasClass("sorting-asc") ? 1 : -1;
+        tableRows.sort(function (a, b) {
+            var aVal = $(a).find("td:eq("+ iteration +")").text().trim().toLowerCase();
+            var bVal = $(b).find("td:eq("+ iteration +")").text().trim().toLowerCase();
+            return aVal.localeCompare(bVal) * sortOrder;
+        });
+    
+        // Toggle sorting order between ascending and descending
+        $(nazwa_tabeli + ">thead>tr>th:eq("+ iteration +")").removeClass("sorting-asc sorting-desc");
+        if (sortOrder === 1) {
+            $(this).removeClass("sorting-asc").addClass("sorting-desc");
+        } else {
+            $(this).removeClass("sorting-desc").addClass("sorting-asc");
         }
-        if (isNaN(bVal)) {
-            return -1 * sortOrder;
+    
+        // Reorder table rows based on sorted data
+        $(nazwa_tabeli + ">tbody").empty();
+        $.each(tableRows, function (i, row) {
+            $(nazwa_tabeli + ">tbody").append(row);
+        });
+    });
+}
+
+SortByString(2);
+SortByString(3);
+SortByString(4);
+SortByString(8);
+SortByString(12);
+
+function SortByNumber(iterations){
+    $(nazwa_tabeli + ">thead>tr>th:eq("+ iterations +")").on("click", function () {
+        var tableRows = $(nazwa_tabeli + ">tbody>tr").toArray();
+        var sortOrder = $(this).hasClass("sorting-asc") ? 1 : -1;
+        tableRows.sort(function (a, b) {
+            var aVal = parseInt($(a).find("td:eq("+ iterations +")").text().trim());
+            var bVal = parseInt($(b).find("td:eq("+ iterations +")").text().trim());
+            if (isNaN(aVal)) {
+                return 1 * sortOrder;
+            }
+            if (isNaN(bVal)) {
+                return -1 * sortOrder;
+            }
+            return (aVal - bVal) * sortOrder;
+        });
+
+        // Toggle sorting order between ascending and descending
+        $(nazwa_tabeli + ">thead>tr>th:eq("+ iterations +")").removeClass("sorting-asc sorting-desc");
+        if (sortOrder === 1) {
+            $(this).removeClass("sorting-asc").addClass("sorting-desc");
+        } else {
+            $(this).removeClass("sorting-desc").addClass("sorting-asc");
         }
-        return (aVal - bVal) * sortOrder;
+
+        // Reorder table rows based on sorted data
+        $(nazwa_tabeli + ">tbody").empty();
+        $.each(tableRows, function (i, row) {
+            $(nazwa_tabeli + ">tbody").append(row);
+        });
     });
-
-    // Toggle sorting order between ascending and descending
-    $(nazwa_tabeli + ">thead>tr>th:eq(0)").removeClass("sorting-asc sorting-desc");
-    if (sortOrder === 1) {
-        $(this).removeClass("sorting-asc").addClass("sorting-desc");
-    } else {
-        $(this).removeClass("sorting-desc").addClass("sorting-asc");
-    }
-
-    // Reorder table rows based on sorted data
-    $(nazwa_tabeli + ">tbody").empty();
-    $.each(tableRows, function (i, row) {
-        $(nazwa_tabeli + ">tbody").append(row);
-    });
-});
-
-
-
+}
+SortByNumber(0);
+SortByNumber(1);
+SortByNumber(5);
+SortByNumber(6);
+SortByNumber(7);
+SortByNumber(9);
+SortByNumber(10);
+SortByNumber(11);
   
-  
-  
-
 
 // This is not my implemetation of the code:
 window.onload = function(){
