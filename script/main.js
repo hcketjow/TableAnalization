@@ -140,26 +140,26 @@ var contacts = [
     { id: 136, data_umowy: '23/11/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Agencja Pracy i Doradztwa Marzanna Rutkowska', adres: 'Kacza 6/13, Ol013 Warszawa', pesel: '',  nip: 5421654210, regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 200_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '03 1950 0001 2006 0124 4984 0002', uwagi: ''},
     { id: 137, data_umowy: '14/12/2017', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Ewa Sadowska', adres: 'Rodzinnej 34, 30-377 Kraków', pesel: 65122400086,  nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 30_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '53 1050 1445 1000 0022 2643 9897', uwagi: ''},
     { id: 138, data_umowy: '30/05/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Ewa Sadowska', adres: 'Rodzinnej 34, 30-377 Kraków', pesel: 65122400086,  nip: '', regon: '', przedmiot: '', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'Aneks do umowy'},
-    { id: 139, data_umowy: '08/08/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Grzegorz Skurski', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 70_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '61 1240 6175 1111 0000 4579 3859', uwagi: 'Brak podpisu inwestora'},
-    { id: 140, data_umowy: '20/02/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Leszek Robert Bąk', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 60_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '92 1440 1387 0000 0000 1638 3147', uwagi: ''},
-    { id: 141, data_umowy: '18/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Mieczysław Rybak', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'imię nieczytelne, trzeba to sprawdzić'},
-    { id: 142, data_umowy: '27/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Ewa Haszyńska', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '84 1140 2004 0000 3102 1714 4942', uwagi: 'nazwisko delikatnie nieczytelne, lepiej sprawdzić '},
-    { id: 143, data_umowy: '27/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Leszek Krupa', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '64 1240 6133 1111 0010 2418 2156', uwagi: ''},
-    { id: 144, data_umowy: '30/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Magdalena Gronkiewicz', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '56 1140 2004 0000 3702 4119 7660', uwagi: 'nieczytelne nazwisko'},
-    { id: 145, data_umowy: '10/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Robert Gomoliński', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '42 1140 2004 0000 3802 3481 1092', uwagi: 'nieczytelne nazwisko '},
-    { id: 146, data_umowy: '22/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Urszula Głowacka', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 20_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '28 1020 1013 0000 0102 0074 4888', uwagi: ''},
-    { id: 147, data_umowy: '24/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Leszek Ocznowicz', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '29 1020 3958 0000 9702 0053 1095', uwagi: 'Dołączono 2 skany, nazwisko nieczytelne, w jednej z umów jest zawarta kwota, a w drugiej jej brak'},
+    { id: 139, data_umowy: '08/08/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Grzegorz Skurski', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 70_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '61 1240 6175 1111 0000 4579 3859', uwagi: 'Brak podpisu inwestora'},
+    { id: 140, data_umowy: '20/02/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Leszek Robert Bąk', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 60_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '92 1440 1387 0000 0000 1638 3147', uwagi: ''},
+    { id: 141, data_umowy: '18/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Mieczysław Rybak', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'imię nieczytelne, trzeba to sprawdzić'},
+    { id: 142, data_umowy: '27/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Ewa Haszyńska', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '84 1140 2004 0000 3102 1714 4942', uwagi: 'nazwisko delikatnie nieczytelne, lepiej sprawdzić '},
+    { id: 143, data_umowy: '27/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Leszek Krupa', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '64 1240 6133 1111 0010 2418 2156', uwagi: ''},
+    { id: 144, data_umowy: '30/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Magdalena Gronkiewicz', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '56 1140 2004 0000 3702 4119 7660', uwagi: 'nieczytelne nazwisko'},
+    { id: 145, data_umowy: '10/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Robert Gomoliński', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '42 1140 2004 0000 3802 3481 1092', uwagi: 'nieczytelne nazwisko '},
+    { id: 146, data_umowy: '22/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Urszula Głowacka', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 20_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '28 1020 1013 0000 0102 0074 4888', uwagi: ''},
+    { id: 147, data_umowy: '24/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Leszek Ocznowicz', adres: '', pesel: '',  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '29 1020 3958 0000 9702 0053 1095', uwagi: 'Dołączono 2 skany, nazwisko nieczytelne, w jednej z umów jest zawarta kwota, a w drugiej jej brak'},
     { id: 148, data_umowy: '24/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Katarzyna Kacpula', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"GROM"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '19 1020 1097 0000 7102 0030 3404', uwagi: ''},
     { id: 149, data_umowy: '24/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Andrzej Cholewa', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"GROM"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '32 1020 1097 0000 7202 0056 9483', uwagi: ''},
     { id: 150, data_umowy: '22/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Marida Błaszezyk', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"GROM"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '85 1240 6104 1111 0000 4785 1333', uwagi: 'Dane inwestora są nieczytelne'},
     { id: 151, data_umowy: '18/02/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Filip Kruszczyński', adres: '', pesel: '',  nip: '', regon: '', przedmiot: '"Chłopaki nie płaczą 2"', kwota: 150_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'Brak number rachunku inwestora'},
-    { id: 152, data_umowy: '18/07/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Martyna Krzyżanowska', adres: 'Azaliowa 8, 43-436 Górki Wielkie', pesel: 97072009769,  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 200_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '78 1160 2202 0000 0001 9983 5599', uwagi: ''},
+    { id: 152, data_umowy: '18/07/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Martyna Krzyżanowska', adres: 'Azaliowa 8, 43-436 Górki Wielkie', pesel: 97072009769,  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 200_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '78 1160 2202 0000 0001 9983 5599', uwagi: ''},
     { id: 153, data_umowy: '15/03/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Władysław Czajkowski', adres: 'Wieniawskiego 84/2, 58-309 Wałbrzych ', pesel: 42040700737,  nip: '', regon: '', przedmiot: '"GROM"', kwota: 2_650_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '26 2490 0005 0000 4000 7534 6263', uwagi: 'Inwestor opłacił 3 filmy '},
     { id: 154, data_umowy: '15/03/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Władysław Czajkowski', adres: 'Wieniawskiego 84/2, 58-309 Wałbrzych ', pesel: 42040700737,  nip: '', regon: '', przedmiot: '"Chłopaki nie płaczą" lub "Konglomerat śmierci"', kwota: 1_200_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '26 2490 0005 0000 4000 7534 6263', uwagi: ''},
-    { id: 155, data_umowy: '15/03/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Władysław Czajkowski', adres: 'Wieniawskiego 84/2, 58-309 Wałbrzych ', pesel: 42040700737,  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 1_150_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '26 2490 0005 0000 4000 7534 6263', uwagi: ''},
+    { id: 155, data_umowy: '15/03/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Władysław Czajkowski', adres: 'Wieniawskiego 84/2, 58-309 Wałbrzych ', pesel: 42040700737,  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 1_150_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '26 2490 0005 0000 4000 7534 6263', uwagi: ''},
     { id: 156, data_umowy: '13/04/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'VECTRA S.A. z siedzibą w Gdyni', adres: 'Al. Zwycięstwa 253, 81-525 Gdynia', pesel: '',  nip: '586-20-40-690', regon: '', przedmiot: '"GROM"', kwota: 400_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '92 1240 6247 1111 0000 4972 9171', uwagi: ''},
     { id: 157, data_umowy: '11/04/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Roman Pluta', adres: 'Bursztynowej 16/25, 20576 Lublin', pesel: 70010803270,  nip: '', regon: '', przedmiot: '"GROM. Narodziny legendy"', kwota: 80_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '65 1020 3176 0000 5502 0015 6711', uwagi: 'inwestor powtarza się drugi raz,aneks'},
-    { id: 158, data_umowy: '24/07/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Paweł Strzaliński', adres: 'Żeromskiego 27, 05-070 Sulejówek', pesel: 78090301376,  nip: '', regon: '', przedmiot: '"Dziewczyny z Dubaju"', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '64 1020 1013 0000 0402 0173 9895', uwagi: ''},
+    { id: 158, data_umowy: '24/07/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Paweł Strzaliński', adres: 'Żeromskiego 27, 05-070 Sulejówek', pesel: 78090301376,  nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '64 1020 1013 0000 0402 0173 9895', uwagi: ''},
     { id: 159, data_umowy: '23/07/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Jarosław Duński', adres: 'Dworcowej 38/4, 44-100 Gliwice', pesel: 41082100716, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 150_000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '72 1240 1343 1111 0000 2354 9766', uwagi: 'Inwestor inwestuje w 2 filmy'},
     { id: 160, data_umowy: '30/05/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Katarzyna Drabowicz', adres: 'Oś. Stare Zegrze 89 c/2, 62-224 Poznań', pesel: 66071610427, nip: '', regon: '', przedmiot: 'PitBull. Król ulicy', kwota: 50_000, nr_rach_spol: '', nr_rach_inwest: '70 1240 1763 1111 0000 1790 3679', uwagi: 'osoba finansuje film Pitbull, lecz jest napisane na pierwszej stronie, że będzie finansować film GROM. '}, //, aneks, brak podpisu, brak podanego numberu rachunku spółki oraz terminu zobowiązania
     { id: 161, data_umowy: '30/03/2015', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Nikodem Dziadek', adres: 'Pniewskiego 4, 60-692 Poznań', pesel: 'NR. DOWODU: AXK802001', nip: '', regon: '', przedmiot: 'PitBull - płacowi vs. zorganizowani', kwota: 100000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '02 1140 2004 0000 3302 0411 4176', uwagi: 'aneks'},
@@ -304,7 +304,7 @@ var contacts = [
     { id: 301, data_umowy: '05/09/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Barbara Tołkacz', adres: '94-234 Łódź ul. Podchorążych 35b/5', pesel: 77031101088, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 200000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '71 1140 2004 0000 3302 7626 3474', uwagi: ''},
     { id: 302, data_umowy: '27/04/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Julian Golonka', adres: '32-080 Zabierzów, ul. Poziomkowa 1', pesel: 51052618350, nip: '', regon: '', przedmiot: 'GROM. Narodziny legendy', kwota: 100000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '48 1910 1048 2110 0023 2368 0001', uwagi: ''},
     { id: 303, data_umowy: '04/09/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Julian Golonka', adres: '32-080 Zabierzów, ul. Poziomkowa 1', pesel: 51052618350, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '48 1910 1048 2110 0023 2368 0001', uwagi: ''},
-    { id: 304, data_umowy: '15/11/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Andrzej Ciężkowski', adres: '02-793 Warszawa, ul. Raabego 1/11', pesel: 54030601375, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 'brak kwoty', nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'brak kwoty i nr rachunku inwestora, umowa podpisana'},
+    { id: 304, data_umowy: '15/11/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Andrzej Ciężkowski', adres: '02-793 Warszawa, ul. Raabego 1/11', pesel: 54030601375, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 0, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'brak kwoty i nr rachunku inwestora, umowa podpisana'},
     { id: 305, data_umowy: '', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Zbigniew Zbrzeźny', adres: '05-307 Dobre, ul. Polna 7', pesel: 67110810150, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 30000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '13 1050 1894 1000 0023 1634 4486', uwagi: 'sprawdzić czy to nie ta sama umowa na dziewczyny ze scanu z data na 9.11.2018'},
     { id: 306, data_umowy: '25/10/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Izydora Kos-Górczyńska', adres: '02-796 Warszawa, ul. Wańkowicza 2/217', pesel: 52020406388, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 20000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '79 1240 1125 1111 0000 0363 0141', uwagi: 'dwa scany tej samej umowy'},
     { id: 307, data_umowy: '09/11/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Jerzy Grandys', adres: '00-712 Warszawa, ul. Bluszczańska 68/7', pesel: 74111701172, nip: '', regon: '', przedmiot: 'GROM', kwota: 70000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '47 1500 1197 1011 4000 6399 0000', uwagi: 'dwa scany tej samej umowy'},
@@ -343,7 +343,7 @@ var contacts = [
     { id: 340, data_umowy: '09/11/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Zbigniew Zbrzeźny', adres: '05-307 Dobre, ul. Polna 7', pesel: 67110810150, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 30000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '13 1050 1894 1000 0023 1634 4486', uwagi: 'sprawdzić czy to nie ta sama umowa na dziewczyny przy której w scanie nie ma daty'},
     { id: 341, data_umowy: '30/08/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Arkadiusz Kiliński', adres: '05-660 Warka, ul. Kusocińskiego 1', pesel: 72110202939, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '61 1050 1777 1000 0022 8420 6725', uwagi: ''},
     { id: 342, data_umowy: '05/09/2018', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Arkadiusz Sekuter', adres: '', pesel: '', nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 1000000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'brak rachunku inwestora, brak podpisów stron '},
-    { id: 343, data_umowy: '', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'brak', adres: '', pesel: '', nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 'brak kwoty', nr_rach_spol: '', nr_rach_inwest: '', uwagi: '52 1460 1181 2025 5453 8397 0001 brak podpisu inwestora, brak kwoty, dopisany odręcznie nr rachunku bank'},
+    { id: 343, data_umowy: '', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'brak', adres: '', pesel: '', nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 0, nr_rach_spol: '', nr_rach_inwest: '', uwagi: '52 1460 1181 2025 5453 8397 0001 brak podpisu inwestora, brak kwoty, dopisany odręcznie nr rachunku bank'},
     { id: 344, data_umowy: '20/08/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Jolanta Czerwińska', adres: '01-779 Warszawa, ul. Krasińskiego 40a/69', pesel: 64100900220, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 50000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '', uwagi: 'brak rachunku inwestora'},
     { id: 345, data_umowy: '23/09/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Karina Popieluch', adres: '01-361 Warszawa, ul. Szobera 4/3', pesel: 76062600568, nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 100000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '19 1160 2202 0000 0000 7549 6435', uwagi: ''},
     { id: 346, data_umowy: '25/10/2019', spolka: 'ENT ONE INVESTMENTS', nazwa_inwest: 'Tomasz Rojda', adres: 'Warszawa, ul. Rejmonta 4/28', pesel: '68010103?72', nip: '', regon: '', przedmiot: 'Dziewczyny z Dubaju', kwota: 75000, nr_rach_spol: '73 1050 1025 1000 0090 3018 1086 ', nr_rach_inwest: '75 1910 1048 2205 3705 6877 0001', uwagi: 'nieczytelny pesel i słabo czytelny nr rachunku inwestora, nr dow os CER283802'},
@@ -369,7 +369,7 @@ const nr_rach_inwest = "#search-nr_rachunku_inwestora";
 const uwagi = "#search-uwagi";
 
 const nazwa_tabeli = "#example-table";
-const suma_wieku = '#sum-age';
+const kwota_calkowita = '#kwota_calkowita';
 // Here is a method to fileter data -- creator Wojciech Chodasiewicz
 function FilterData(nazwa_elemenu, nazwa_tabeli) {
     $(nazwa_elemenu).on("keyup", function() {
@@ -420,7 +420,7 @@ function FilterData(nazwa_elemenu, nazwa_tabeli) {
 function displayKwotaSum(KwotaSum) {
     if (isNaN(KwotaSum))
         KwotaSum = 40315000;
-    $(suma_wieku).text("Całkowita kwota: " + KwotaSum);
+    $(kwota_calkowita).text("Całkowita kwota: " + KwotaSum);
 }
 
 function isEmpty(str) {
@@ -491,15 +491,23 @@ function exportToExcel() {
     var filteredData = [];
   
     for (var i = 0; i < rows.length; i++) {
-      if (rows[i].style.display !== "none") {
-        filteredData.push(rows[i]);
-      }
+        if (rows[i].style.display !== "none") {
+            filteredData.push(rows[i]);
+        }
     }
   
     var workbook = XLSX.utils.book_new();
     var worksheet = XLSX.utils.table_to_sheet(table);
   
+    // Adding a new row to the worksheet
+    XLSX.utils.sheet_add_aoa(worksheet, [['ID', 'Data zawarcia umowy', 
+        'Spółka', 'Nazwa Inwestora', 'Adres', 'Pesel', 'NIP', 'REGON',
+        'Przedmiot', 'Kwota', 'Nr. rachunku spółki', 'Nr. rachunku inwestora',
+        'Uwagi'
+    ]]);
+  
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+  
     var excelContent = XLSX.write(workbook, { bookType: "xlsx", type: "binary" });
   
     var blob = new Blob([s2ab(excelContent)], { type: "application/octet-stream" });
@@ -516,14 +524,9 @@ function s2ab(s) {
     return buf;
 }
   
-
-  
-  
-
   
 
 
-  
 // This is not my implemetation of the code:
 window.onload = function(){
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;

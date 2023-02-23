@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -15,21 +17,23 @@
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="FN.png" width="40" height="40"> Firenet</a>
+          <a class="navbar-brand" href="http://www.firenet.com.pl"><img src="FN.png" width="40" height="40"> FireNet Waldemar Chodasiewicz</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Firenet</h5>
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">FireNet Waldemar Chodasiewicz</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                    Poczta: 
-                    <a class="nav-link">biuro@firenet.com.pl</a>
-                </li>
+                <a class="nav-link" href="#">Dane kontaktowe:</a>
+				        <li><a href="https://goo.gl/maps/rTfszBkh6YUeswyt6" style="color:#FFFFFF;" target="iframe">Patriotów 110 lok.111A<br>04-844 Warszawa</a></li>
+				        <li>+48 504 270 395</li>
+				        <li><a href="mailto:biuro@firenet.com.pl" style="color:#FFFFFF;" target="iframe">biuro@firenet.com.pl</a></li>
+								</li>
                 <br>
                 <li class="nav-item">
                     Jeśli szukasz więcej informacji o Naszej firmie
@@ -42,11 +46,11 @@
         </div>
     </nav>
     <br><br><br>
-    <h1>Analiza danych</h1>
+    <h1>PO III Ds.180.2020</h1>
     <br>
     <div class="row">
         <div class="col-8">
-            <div class="p-2 fw-light" id="sum-age">Całkowita kwota: 40315000</div>
+            <div class="p-2 fw-light" id="kwota_calkowita">Całkowita kwota: 40315000</div>
         </div>
         <div class="col-2">
             <!-- <button type="button" id="export-btn" ></button> -->
@@ -59,125 +63,125 @@
     </div>
     <br>
     <div style="overflow-x: auto;">
-        <table id="example-table" class="table table-hover"> 
+        <table id="example-table" class="table table-hover">
             <thead>
                 <tr class="bg-black">
                     <th>
-                        <input 
-                            id="search-id" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-id"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="id"
                             placeholder="ID"
                         >
                     </th>
                     <th>
-                        <input 
-                            id="search-data_zawarcia_umowy" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-data_zawarcia_umowy"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="data_zawarcia_umowy"
                             placeholder="Data zawarcia umowy"
                         >
                     </th>
                     <th>
-                        <input 
-                            id="search-spolka" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-spolka"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="spolka"
                             placeholder="Spółka"
                         >
                     </th>
                     <th>
-                        <input 
-                            id="search-nazwa_inwestroa" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-nazwa_inwestroa"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="nazwa_inwestroa"
                             placeholder="Nazwa Inwestroa"
                         >
                     </th>
                     <th>
-                        <input 
-                            id="search-adres" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-adres"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="adres"
                             placeholder="Adres"
                         >
                     </th>
                     <th>
-                        <input 
-                            id="search-pesel" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-pesel"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="pesel"
                             placeholder="Pesel"
-                        >   
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-nip" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-nip"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="NIP"
                             placeholder="NIP"
-                        >  
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-REGON" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-REGON"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="REGON"
                             placeholder="REGON"
-                        >  
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-przedmiot" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-przedmiot"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="przedmiot"
                             placeholder="Przedmiot"
-                        >  
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-kwota" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-kwota"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="kwota"
                             placeholder="Kwota"
-                        >  
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-nr_rachunku_spolki" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-nr_rachunku_spolki"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="nr_rachunku_spolki"
                             placeholder="Nr rachunku spółki"
-                        >  
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-nr_rachunku_inwestora" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-nr_rachunku_inwestora"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="nr_rachunku_inwestora"
                             placeholder="Nr rachunku inwestrora"
-                        >  
+                        >
                     </th>
                     <th>
-                        <input 
-                            id="search-uwagi" 
-                            class="form-control input-group-lg bg-black text-light" 
+                        <input
+                            id="search-uwagi"
+                            class="form-control input-group-lg bg-black text-light"
                             type="text"
                             name="uwagi"
                             placeholder="Uwagi"
-                        >  
+                        >
                     </th>
                 </tr>
             </thead>
@@ -185,7 +189,7 @@
             </tbody>
         </table>
     </div>
-    
+
 </body>
 <script src="script/main.js"></script>
 
