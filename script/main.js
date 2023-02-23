@@ -460,19 +460,27 @@ function exportToCSV() {
     var rows = table.querySelectorAll(nazwa_tabeli+">tbody>tr");
     var filteredData = [];
 
+    // Add new row to filteredData
+    var newRow = ['ID', 'Data zawarcia umowy', 
+        'Spółka', 'Nazwa Inwestora', 'Adres', 'Pesel', 'NIP', 'REGON',
+        'Przedmiot', 'Kwota', 'Nr. rachunku spółki', 'Nr. rachunku inwestora',
+        'Uwagi'
+    ];
+    filteredData.push(newRow);
+
     for (var i = 0; i < rows.length; i++) {
         if (rows[i].style.display !== "none") {
-            filteredData.push(rows[i]);
+            var row = [];
+            rows[i].querySelectorAll("td").forEach(function(cell) {
+                row.push(cell.innerText);
+            });
+            filteredData.push(row);
         }
     }
 
     var csvContent = "data:text/csv;charset=utf-8,";
     filteredData.forEach(function(rowArray) {
-        var row = [];
-        rowArray.querySelectorAll("td").forEach(function(cell) {
-            row.push(cell.innerText);
-        });
-        csvContent += row.join(",") + "\r\n";
+        csvContent += rowArray.join(",") + "\r\n";
     });
 
     var encodedUri = encodeURI(csvContent);
@@ -482,6 +490,8 @@ function exportToCSV() {
     document.body.appendChild(link);
     link.click();
 }
+
+
 
 
 // Export to Excel file:
