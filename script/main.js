@@ -331,5 +331,4 @@ window.onload = function(){
                 console.log('Entries all displayed.');    
         };
     };
-    
 };
