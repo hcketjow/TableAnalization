@@ -237,12 +237,11 @@ window.onload = function(){
         db.onerror = function(event) {
             console.log('Error with loading data.');
         };
-        
-        var objectStore = db.createObjectStore('DataList', { keyPath: 'id' }); 
-        objectStore.createIndex('person_name', 'person_name'); 
-        objectStore.createIndex('surname', 'surname');
-        objectStore.createIndex('age', 'age');
-        objectStore.createIndex('company_name', 'company_name');
+
+        var objectStore = db.createObjectStore('DataList', { keyPath: 'id' });
+        for (var key in contacts[0])
+            if (contacts[0].hasOwnProperty(key))
+                objectStore.createIndex(key, key);
     };
     
     function populateData() {
@@ -256,7 +255,7 @@ window.onload = function(){
         };
     };
 
-  var thControls = document.querySelectorAll('th');
+    var thControls = document.querySelectorAll('th');
     for(i = 0; i < thControls.length; i++) {
         var activeThead = thControls[i];
         activeThead.onclick = function(e) {
@@ -264,7 +263,7 @@ window.onload = function(){
             if(activeIndex == 'ID')
                 displayDataByKey(); 
             else {
-                if(activeIndex == "Data Umowy")
+                if(activeIndex == "Person name")
                     displayDataByIndex(person_name);
                 else if(activeIndex == "surname")
                     displayDataByIndex(surname);
@@ -283,17 +282,19 @@ window.onload = function(){
 
         objectStore.openCursor().onsuccess = function(event) {
             var cursor = event.target.result;
-            if(cursor) {
+            if (cursor) {
                 var tableRow = document.createElement('tr');
-                tableRow.innerHTML =  '<td>' + cursor.value.id      + '</td>'
-                                    + '<td>' + cursor.value.person_name  + '</td>'
-                                    + '<td>' + cursor.value.surname   + '</td>'
-                                    + '<td>' + cursor.value.age  + '</td>'
-                                    + '<td>' + cursor.value.company_name + '</td>';
-                tableEntry.appendChild(tableRow);  
+                for (var property in cursor.value) {
+                    if (cursor.value.hasOwnProperty(property)) {
+                        var tableCell = document.createElement('td');
+                        tableCell.textContent = cursor.value[property];
+                        tableRow.appendChild(tableCell);
+                    }
+                }
+                tableEntry.appendChild(tableRow);
                 cursor.continue();
-            }else
-                console.log('Entries all displayed.');    
+            } else
+                console.log('Entries all displayed.');
         };
     };
 
@@ -317,18 +318,20 @@ window.onload = function(){
      
         myIndex.openCursor().onsuccess = function(event) {
             var cursor = event.target.result;
-            if(cursor) {
+            if (cursor) {
                 var tableRow = document.createElement('tr');
-                tableRow.innerHTML = '<td>' + cursor.value.id + '</td>'
-                                + '<td>' + cursor.value.person_name + '</td>'
-                                + '<td>' + cursor.value.surname + '</td>'
-                                + '<td>' + cursor.value.age + '</td>'
-                                + '<td>' + cursor.value.company_name + '</td>';
-                tableEntry.appendChild(tableRow);  
-
+                
+                for (var property in cursor.value) {
+                    if (cursor.value.hasOwnProperty(property)) {
+                        var tableCell = document.createElement('td');
+                        tableCell.textContent = cursor.value[property];
+                        tableRow.appendChild(tableCell);
+                    }
+                }
+                tableEntry.appendChild(tableRow);
                 cursor.continue();
             } else
-                console.log('Entries all displayed.');    
+                console.log('All entries are displayed.');             
         };
     };
 };
